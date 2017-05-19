@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 
-# Install the latest unstable chrome headless browser
+# Install basic tools/utilities
 RUN apt-get update -y && \
     apt-get install ca-certificates \
       gconf-service \
@@ -20,8 +20,10 @@ RUN apt-get update -y && \
       xdg-utils \
       wget \
       curl \
-      xz-utils -y --no-install-recommends && \
-    wget https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb && \
+      xz-utils -y --no-install-recommends
+
+# Install Google Chrome unstable (which has cross platform support for headless mode)    
+RUN wget https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb && \
     dpkg -i google-chrome*.deb && \
     apt-get install -f && \
     apt-get clean autoclean && \
