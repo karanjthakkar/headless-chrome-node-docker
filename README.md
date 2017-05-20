@@ -28,6 +28,11 @@ google-chrome \
 After building your docker image and running a container with it, you can connect to headless chrome inside the container on port 9222. If you're using Node.js, you can use [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface) module to talk to Chrome via the [Chrome Debugging Protocol](https://chromedevtools.github.io/devtools-protocol/)
 
 
+# Image Size
+
+177 MB compressed as of [last build](https://hub.docker.com/r/geekykaran/headless-chrome-node-docker/tags/)
+
+
 # License
 
 MIT © [Karan Thakkar](https://karanjthakkar.com)
