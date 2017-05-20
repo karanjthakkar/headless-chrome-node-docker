@@ -28,8 +28,7 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* google-chrome-unstable_current_amd64.deb
 
 # Install nodejs
-ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 7.10.0
+ENV NPM_CONFIG_LOGLEVEL=info NODE_VERSION=7.10.0
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" \
   && tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 \
