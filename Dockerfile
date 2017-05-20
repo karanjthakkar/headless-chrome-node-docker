@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 
-# Install basic tools/utilities
+# Install basic tools/utilities and google Chrome unstable (which has cross platform support for headless mode). Combining theem together so that apt cache cleanup would need to be done just once.
 RUN apt-get update -y && \
     apt-get install ca-certificates \
       gconf-service \
@@ -20,18 +20,15 @@ RUN apt-get update -y && \
       xdg-utils \
       wget \
       curl \
-      xz-utils -y --no-install-recommends
-
-# Install Google Chrome unstable (which has cross platform support for headless mode)    
-RUN wget https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb && \
+      xz-utils -y --no-install-recommends && \
+    wget https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb && \
     dpkg -i google-chrome*.deb && \
     apt-get install -f && \
     apt-get clean autoclean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* google-chrome-unstable_current_amd64.deb
 
 # Install nodejs
-ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 7.10.0
+ENV NPM_CONFIG_LOGLEVEL=info NODE_VERSION=7.10.0
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" \
   && tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 \
