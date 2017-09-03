@@ -2,7 +2,7 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/geekykaran/headless-chrome-node-docker.svg)](https://store.docker.com/community/images/geekykaran/headless-chrome-node-docker/tags) [![Docker Pulls](https://img.shields.io/docker/stars/geekykaran/headless-chrome-node-docker.svg)](https://store.docker.com/community/images/geekykaran/headless-chrome-node-docker/tags)
 
-Provides a Docker image with out of the box support for the recent release of [cross-platform Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome)(60.0.3100.0 dev) and [Node](https://nodejs.org/)(7.10.0)
+Provides a Docker image with out of the box support for the recent release of [cross-platform Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome)(62.0.3198.0 dev), [Node](https://nodejs.org/)(node: 8.4.0, npm: 5.3.0) and [Yarn](https://yarnpkg.com)(0.27.5)
 
 
 # Usage
