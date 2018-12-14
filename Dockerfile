@@ -16,7 +16,7 @@ RUN apt-get update -y && \
       libxss1 \
       libxtst6 \
       fonts-liberation \
-      libappindicator1 \
+      libappindicator3-1 \
       xdg-utils \
       lsb-release \
       wget \
